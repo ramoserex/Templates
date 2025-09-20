@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100-Day AI Journey</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        taupe: '#483C32',
+                        beige: '#F5F5DC',
+                        ivory: '#FFFFF0',
+                        coral: '#FF7F50',
+                        sapphire: '#0F52BA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFFFF0 0%, #F5F5DC 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .tag-pill {
+            transition: all 0.2s ease;
+        }
+        .tag-pill:hover {
+            transform: scale(1.05);
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #F5F5DC;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #0F52BA;
+            transition: width 0.5s ease;
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(72, 60, 50, 0.2), transparent);
+        }
+    </style>
+</head>
+<body class="font-sans bg-ivory text-taupe min-h-screen">
+    <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-20"></div>
+    
+    <!-- Header -->
+    <header class="gradient-bg shadow-sm">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i data-feather="cpu" class="text-sapphire w-8 h-8"></i>
+                    <h1 class="text-2xl font-bold text-taupe">100-Day AI Journey</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="text-taupe hover:text-sapphire transition">Dashboard</a>
+                    <a href="#" class="text-taupe hover:text-sapphire transition">Journal</a>
+                    <a href="#" class="text-taupe hover:text-sapphire transition">Progress</a>
+                    <a href="#" class="text-taupe hover:text-sapphire transition">Settings</a>
+                </nav>
+                <button class="md:hidden">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Dashboard Overview -->
+        <section class="mb-12" data-aos="fade-up">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-taupe">Dashboard</h2>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-taupe/80">Day 15</span>
+                    <div class="w-32 bg-beige rounded-full h-2.5">
+                        <div class="progress-fill h-2.5 rounded-full" style="width: 15%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-taupe/60">Current Streak</p>
+                            <h3 class="text-3xl font-bold text-sapphire">8 days</h3>
+                        </div>
+                        <i data-feather="zap" class="w-8 h-8 text-coral"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-taupe/60">Hours Logged</p>
+                            <h3 class="text-3xl font-bold text-sapphire">42.5</h3>
+                        </div>
+                        <i data-feather="clock" class="w-8 h-8 text-coral"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-taupe/60">Tags Used</p>
+                            <h3 class="text-3xl font-bold text-sapphire">12</h3>
+                        </div>
+                        <i data-feather="tag" class="w-8 h-8 text-coral"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tag Categories -->
+            <div class="mb-8" data-aos="fade-up">
+                <h3 class="text-lg font-medium mb-4">Categories</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm card-hover">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-sapphire/10 flex items-center justify-center">
+                                <i data-feather="book" class="text-sapphire w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Fundamentals</h4>
+                                <p class="text-sm text-taupe/60">5 tags</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm card-hover">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-sapphire/10 flex items-center justify-center">
+                                <i data-feather="layers" class="text-sapphire w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Core ML</h4>
+                                <p class="text-sm text-taupe/60">4 tags</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm card-hover">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-sapphire/10 flex items-center justify-center">
+                                <i data-feather="target" class="text-sapphire w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Specialization</h4>
+                                <p class="text-sm text-taupe/60">2 tags</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm card-hover">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-sapphire/10 flex items-center justify-center">
+                                <i data-feather="code" class="text-sapphire w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Projects</h4>
+                                <p class="text-sm text-taupe/60">1 tag</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Entries -->
+            <div data-aos="fade-up">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium">Recent Entries</h3>
+                    <button class="text-sm text-sapphire hover:underline">View All</button>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <table class="min-w-full divide-y divide-beige">
+                        <thead class="bg-beige/30">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-taupe/60 uppercase tracking-wider">Day</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-taupe/60 uppercase tracking-wider">Topic</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-taupe/60 uppercase tracking-wider">Tags</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-taupe/60 uppercase tracking-wider">Hours</th>
+                                <th scope="col" class="relative px-6 py-3"><span class="sr-only">Actions</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-beige">
+                            <tr class="hover:bg-beige/10 transition">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-taupe">15</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-taupe">Neural Network Architectures</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex space-x-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-sapphire/10 text-sapphire tag-pill">CNN</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-sapphire/10 text-sapphire tag-pill">PyTorch</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-taupe">3.5</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-sapphire hover:text-sapphire/80 mr-3"><i data-feather="edit" class="w-4 h-4"></i></button>
+                                    <button class="text-coral hover:text-coral/80"><i data-feather="trash" class="w-4 h-4"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-beige/10 transition">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-taupe">14</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-taupe">Probability Distributions</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex space-x-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-sapphire/10 text-sapphire tag-pill">Math</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-sapphire/10 text-sapphire tag-pill">Statistics</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-taupe">2.0</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-sapphire hover:text-sapphire/80 mr-3"><i data-feather="edit" class="w-4 h-4"></i></button>
+                                    <button class="text-coral hover:text-coral/80"><i data-feather="trash" class="w-4 h-4"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-beige/10 transition">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-taupe">13</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-taupe">Data Visualization</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex space-x-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-sapphire/10 text-sapphire tag-pill">Python</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-sapphire/10 text-sapphire tag-pill">Matplotlib</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-sapphire/10 text-sapphire tag-pill">Seaborn</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-taupe">1.5</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-sapphire hover:text-sapphire/80 mr-3"><i data-feather="edit" class="w-4 h-4"></i></button>
+                                    <button class="text-coral hover:text-coral/80"><i data-feather="trash" class="w-4 h-4"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add New Entry -->
+        <section class="mb-12" data-aos="fade-up">
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h3 class="text-lg font-medium mb-4">Add New Entry</h3>
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="day" class="block text-sm font-medium text-taupe/80 mb-1">Day</label>
+                            <input type="number" id="day" class="w-full px-4 py-2 border border-beige rounded-lg focus:ring-sapphire focus:border-sapphire">
+                        </div>
+                        <div>
+                            <label for="hours" class="block text-sm font-medium text-taupe/80 mb-1">Hours Spent</label>
+                            <input type="number" step="0.25" id="hours" class="w-full px-4 py-2 border border-beige rounded-lg focus:ring-sapphire focus:border-sapphire">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="topic" class="block text-sm font-medium text-taupe/80 mb-1">Topic Studied</label>
+                            <input type="text" id="topic" class="w-full px-4 py-2 border border-beige rounded-lg focus:ring-sapphire focus:border-sapphire">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="tags" class="block text-sm font-medium text-taupe/80 mb-1">Tags</label>
+                            <div class="flex flex-wrap gap-2 mb-2">
+                                <span class="px-3 py-1 bg-sapphire/10 text-sapphire rounded-full text-sm flex items-center">
+                                    Python <button type="button" class="ml-1 text-sapphire/60 hover:text-sapphire"><i data-feather="x" class="w-3 h-3"></i></button>
+                                </span>
+                                <span class="px-3 py-1 bg-sapphire/10 text-sapphire rounded-full text-sm flex items-center">
+                                    Math <button type="button" class="ml-1 text-sapphire/60 hover:text-sapphire"><i data-feather="x" class="w-3 h-3"></i></button>
+                                </span>
+                                <button class="text-sapphire hover:text-sapphire/80 text-sm flex items-center">
+                                    <i data-feather="plus" class="w-4 h-4 mr-1"></i> Add Tag
+                                </button>
+                            </div>
+                            <input type="text" id="tags" placeholder="Search or add tags..." class="w-full px-4 py-2 border border-beige rounded-lg focus:ring-sapphire focus:border-sapphire">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="reflection" class="block text-sm font-medium text-taupe/80 mb-1">Reflections</label>
+                            <textarea id="reflection" rows="3" class="w-full px-4 py-2 border border-beige rounded-lg focus:ring-sapphire focus:border-sapphire"></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="project" class="block text-sm font-medium text-taupe/80 mb-1">Project Link/Code</label>
+                            <input type="url" id="project" class="w-full px-4 py-2 border border-beige rounded-lg focus:ring-sapphire focus:border-sapphire">
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" class="px-4 py-2 border border-beige rounded-lg text-taupe mr-3 hover:bg-beige/30 transition">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-sapphire text-white rounded-lg hover:bg-sapphire/90 transition flex items-center">
+                            <i data-feather="save" class="w-4 h-4 mr-2"></i> Save Entry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg border-t border-beige/50 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i data-feather="cpu" class="text-sapphire w-6 h-6"></i>
+                        <span class="font-medium">100-Day AI Journey</span>
+                    </div>
+                    <p class="text-sm text-taupe/60 mt-1">Track your learning progress with elegance</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-taupe hover:text-sapphire transition"><i data-feather="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-taupe hover:text-sapphire transition"><i data-feather="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-taupe hover:text-sapphire transition"><i data-feather="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div class="section-divider my-6"></div>
+            <div class="text-center text-sm text-taupe/60">
+                <p>© 2023 100-Day AI Journey. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x0f52ba,
+            backgroundColor: 0xfffff0,
+            size: 0.8
+        });
+    </script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
